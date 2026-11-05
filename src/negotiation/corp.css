@@ -1,0 +1,147 @@
+/* Scoped look for the generated supplier websites and the trade portal.
+   Deliberately NOT the Narcos theme: light, plain, corporate. All colours come from
+   the CSS variables set per site in siteTheme.ts. */
+
+.corp-site {
+  font-family: var(--c-font-body);
+  color: var(--c-text);
+  background: var(--c-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+.corp-site h1,
+.corp-site h2,
+.corp-site h3 {
+  font-family: var(--c-font-head);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.corp-site a:not(.corp-btn) {
+  color: inherit;
+}
+
+.corp-hero-art {
+  background: var(--c-hero-art);
+  background-size: cover, 14px 14px;
+}
+
+.corp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.925rem;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  cursor: pointer;
+}
+.corp-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.corp-btn-primary {
+  background: var(--c-primary);
+  color: #fff;
+}
+.corp-btn-primary:not(:disabled):hover {
+  background: var(--c-primary-dark);
+}
+.corp-btn-outline {
+  background: transparent;
+  color: var(--c-primary);
+  border-color: var(--c-primary);
+}
+.corp-btn-outline:not(:disabled):hover {
+  background: var(--c-primary);
+  color: #fff;
+}
+.corp-btn-accent {
+  background: var(--c-accent);
+  color: #1a1a1a;
+}
+.corp-btn-accent:not(:disabled):hover {
+  filter: brightness(0.95);
+}
+
+.corp-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 0.75rem;
+}
+
+.corp-input {
+  width: 100%;
+  border: 1px solid var(--c-border);
+  border-radius: 0.375rem;
+  background: #fff;
+  color: var(--c-text);
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+}
+.corp-input:focus {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 1px;
+}
+
+.corp-muted {
+  color: var(--c-muted);
+}
+
+.corp-chat-panel {
+  animation: corp-chat-in 0.18s ease-out;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+@keyframes corp-chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.corp-typing span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 3px;
+  border-radius: 999px;
+  background: var(--c-muted);
+  animation: corp-typing 1s infinite ease-in-out;
+}
+.corp-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.corp-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes corp-typing {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.corp-monogram-hex {
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+/* Anchor jumps land below the sticky portal bar + site header */
+.corp-site [id] {
+  scroll-margin-top: 140px;
+}

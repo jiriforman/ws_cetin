@@ -1,0 +1,1 @@
+ALTER TABLE public.phases ADD COLUMN IF NOT EXISTS learnings_visible boolean NOT NULL DEFAULT false;
