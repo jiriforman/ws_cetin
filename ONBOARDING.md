@@ -48,7 +48,7 @@ Using Lovable instead? It applies `drizzle/migrations` (see `AGENTS.md`).
 
 **Edge functions** – deploy all of them after every change in `supabase/functions/`:
 ```sh
-supabase functions deploy admin-api negotiation-api team-api team-codes update-team-scores
+supabase functions deploy admin-api negotiation-api team-api team-codes
 ```
 
 **Secrets** (Supabase → Edge Functions → Secrets, or Lovable → Cloud → Secrets)
@@ -58,7 +58,6 @@ supabase functions deploy admin-api negotiation-api team-api team-codes update-t
 | `ADMIN_PASSWORD` | ✅ | Login to `/admin`; changing it logs everyone out |
 | `ANTHROPIC_API_KEY` | For negotiation | Default LLM provider |
 | `LOVABLE_API_KEY` | Optional | Alternative provider |
-| `WEBHOOK_SECRET` | Optional | Protects `update-team-scores` (Google Sheet sync) |
 | `HIDE_TEAM_CODES` | Optional | `true` hides team tokens on the rankings page |
 
 Generate strong values: `openssl rand -base64 24`. The values in `.env.example` are random placeholders – **do not reuse them**.

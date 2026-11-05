@@ -465,7 +465,7 @@ export const WorkshopProvider = ({ children }: { children: ReactNode }) => {
     });
 
   const recalculateRankings = async () => {
-    // Reload data from database (all values come from the Google Sheet)
+    // Reload rankings data from the database
     await loadData(isAdmin);
   };
 
