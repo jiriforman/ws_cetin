@@ -1,0 +1,118 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792706336505,
+      "tag": "0000_negotiation_room_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793025013636,
+      "tag": "0001_cartel_rankings_and_evaluation",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793030000000,
+      "tag": "0002_tool_categories",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793090000000,
+      "tag": "0003_fixed_tool_categories",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793090000001,
+      "tag": "0004_fixed_tool_categories",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793100000000,
+      "tag": "0005_merge_research_into_chat",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793110000000,
+      "tag": "0006_fill_missing_tool_logos",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793120000000,
+      "tag": "0007_negotiation_term_overrides",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1793120000001,
+      "tag": "0008_phase_learnings",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1793120000002,
+      "tag": "0009_phase_learnings_visibility",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1793120000003,
+      "tag": "0010_allow_learnings_page",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1793120000004,
+      "tag": "0011_phase_cheat_sheet",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1793261087308,
+      "tag": "0012_phase_cheat_sheet",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1793616129264,
+      "tag": "0013_parallel_phases_and_team_profile",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1793616564818,
+      "tag": "0014_phase_parallel_partner",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1793621281261,
+      "tag": "0015_phase_parallel_partner",
+      "breakpoints": true
+    }
+  ]
+}

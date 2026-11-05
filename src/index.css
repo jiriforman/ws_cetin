@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Narcos Theme Design System - Inspired by Netflix's Narcos */
+
+@layer base {
+  :root {
+    /* Pure black backgrounds like the show */
+    --background: 0 0% 3%;
+    --foreground: 40 15% 90%;
+    
+    /* Card surfaces - very dark with slight warmth */
+    --card: 0 0% 8%;
+    --card-foreground: 40 15% 90%;
+    
+    /* Popover */
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 15% 90%;
+    
+    /* Primary - Netflix red / blood red */
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - cream/beige like vintage paper */
+    --secondary: 40 20% 85%;
+    --secondary-foreground: 0 0% 10%;
+    
+    /* Muted - dark gray */
+    --muted: 0 0% 15%;
+    --muted-foreground: 40 10% 60%;
+    
+    /* Accent - gold/yellow for Colombian flag accent */
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    
+    /* Destructive - bright red for danger */
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders - subtle dark gray */
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --pdf-paper: 0 0% 100%;
+    --pdf-ink: 0 0% 10%;
+    --pdf-muted: 0 0% 94%;
+    --pdf-border: 0 0% 70%;
+    --ring: 0 100% 50%;
+    
+    --radius: 0.25rem;
+    
+    /* Custom theme variables */
+    --narcos-red: 0 100% 50%;
+    --narcos-cream: 40 20% 85%;
+    --narcos-gold: 45 100% 50%;
+    --narcos-blue: 210 100% 40%;
+    --powder-white: 0 0% 95%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(0 70% 30%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(0 100% 50% / 0.3) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-red: 0 0 30px hsl(0 100% 50% / 0.4);
+    --shadow-powder: 0 0 40px hsl(0 0% 100% / 0.2);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.9);
+  }
+}
+
+/* Browser-local reading preference overrides every text style, including editor
+   content and supplier themes, without modifying images or embedded media. */
+:root[data-reading-font="atkinson"] { --reading-font: 'Atkinson Hyperlegible', Arial, sans-serif; }
+:root[data-reading-font="source"] { --reading-font: 'Source Sans 3', Arial, sans-serif; }
+:root[data-reading-font="arial"] { --reading-font: Arial, Helvetica, sans-serif; }
+:root[data-reading-font="verdana"] { --reading-font: Verdana, Geneva, sans-serif; }
+:root[data-reading-font="roboto"] { --reading-font: 'Roboto Condensed', Arial, sans-serif; }
+:root[data-reading-font="nunito"] { --reading-font: 'Nunito Sans', Arial, sans-serif; }
+:root[data-reading-font="lato"] { --reading-font: 'Lato', Arial, sans-serif; }
+:root[data-reading-font="open-sans"] { --reading-font: 'Open Sans', Arial, sans-serif; }
+:root[data-reading-font="merriweather"] { --reading-font: 'Merriweather', Georgia, serif; }
+:root[data-reading-font="ibm-plex"] { --reading-font: 'IBM Plex Sans', Arial, sans-serif; }
+:root[data-reading-font="georgia"] { --reading-font: Georgia, 'Times New Roman', serif; }
+:root[data-reading-font="tahoma"] { --reading-font: Tahoma, Arial, sans-serif; }
+:root[data-reading-font="trebuchet"] { --reading-font: 'Trebuchet MS', Arial, sans-serif; }
+:root[data-reading-font="comic"] { --reading-font: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive; }
+
+html { font-size: var(--reading-root-size, 16px); }
+
+.learnings-pdf {
+  --background: var(--pdf-paper);
+  --foreground: var(--pdf-ink);
+  --secondary: var(--pdf-ink);
+  --muted-foreground: var(--pdf-ink);
+  --muted: var(--pdf-muted);
+  --border: var(--pdf-border);
+  padding: 16px;
+}
+
+html[data-reading-font]:not([data-reading-font="original"]) body,
+html[data-reading-font]:not([data-reading-font="original"]) body *:not(svg):not(svg *) {
+  font-family: var(--reading-font) !important;
+  letter-spacing: 0 !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-condensed;
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(0 0% 10% / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(0 0% 8% / 0.3) 0%, transparent 50%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+  
+  .text-narcos {
+    @apply text-primary text-glow;
+    letter-spacing: 0.05em;
+  }
+  
+  .text-powder {
+    @apply text-secondary;
+    text-shadow: 0 0 10px hsl(var(--powder-white) / 0.5);
+  }
+  
+  .border-red-glow {
+    @apply border-primary;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.6);
+  }
+  
+  .bg-glass {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.4);
+  }
+  
+  .narcos-title {
+    @apply font-display uppercase tracking-wider;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+  }
+  
+  .terminal-cursor::after {
+    content: '▋';
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+  
+  .glitch-effect:hover {
+    animation: glitch 0.3s ease-in-out;
+  }
+  
+  @keyframes powder-fall {
+    0% { transform: translateY(-100%) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+  
+  .animate-powder {
+    animation: powder-fall 8s linear infinite;
+  }
+  
+  @keyframes blood-drip {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(50px); opacity: 0; }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Page width: full width on small screens, 75% of the viewport from lg up. */
+@layer components {
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 75vw;
+    }
+  }
+}

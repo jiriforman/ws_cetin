@@ -1,0 +1,1 @@
+ALTER TABLE public.phases ADD COLUMN IF NOT EXISTS cheat_sheet text NOT NULL DEFAULT '';

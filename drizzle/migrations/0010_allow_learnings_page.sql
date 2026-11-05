@@ -1,0 +1,2 @@
+ALTER TABLE public.sections DROP CONSTRAINT sections_page_key_check;
+ALTER TABLE public.sections ADD CONSTRAINT sections_page_key_check CHECK (page_key IN ('home', 'phases', 'aiTools', 'teamsDashboard', 'aboutUs', 'learnings'));
